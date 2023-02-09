@@ -1,6 +1,6 @@
 // Add imports above this line
 import SimpleLightbox from 'simplelightbox';
-import "simplelightbox/dist/simple-lightbox.min.css";
+import 'simplelightbox/dist/simple-lightbox.min.css';
 import { galleryItems } from './gallery-items';
 // Change code below this line
 console.log(galleryItems);
@@ -8,8 +8,9 @@ console.log(galleryItems);
 let gallery = document.querySelector('.gallery');
 
 let markup = galleryItems
-    .map((item) =>
-        `<div class="gallery__item">
+  .map(
+    item =>
+      `<div class="gallery__item">
             <a class="gallery__link" href="${item.original}">
                 <img class="gallery__image" 
                 src="${item.preview}" 
@@ -18,12 +19,13 @@ let markup = galleryItems
                />
             </a>
         </div>`
-    ).join("");
-    
+  )
+  .join('');
+
 gallery.innerHTML = markup;
 
-new SimpleLightbox(".gallery a", {
-  captionsData: "alt",
+new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
   captionDelay: 250,
   captionPosition: 'bottom',
 });
